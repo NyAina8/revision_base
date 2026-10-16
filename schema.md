@@ -35,3 +35,21 @@
 
 **client** (**id_client**, nom) (nouveau)
 -   Non, id_client doit accepter NULL, car certains clients sont de passage. Il faut utiliser LEFT JOIN pour afficher toutes les commandes, même celles qui n'ont aucun client associé.
+
+## Etape 5 (serveurs et tables)
+
+**categorie** (**id_categorie**, nom)
+
+**plat** (**id_plat**, nom, prix, #id_categorie)
+
+**client** (**id_client**, nom)
+
+**serveur** (**id_serveur**, nom) (nouveau)
+
+**table_salle** (**id_table**, numero) (nouveau)
+
+**commande** (**id_commande**, date_commande, #id_client?, #id_serveur, #id_table?) (modifié)
+
+**ligne_commande** (**#id_commande**, **#id_plat**, quantite)
+- Une table de la salle représente un emplacement physique du restaurant qui peut accueillir plusieurs commandes au fil du temps. Une commande représente un achat effectué à une date donnée.
+- Le nom table pose problème parce que TABLE est un mot-clé réservé du SQL, utilisé notamment dans CREATE TABLE. On préfère donc le nom table_salle.
