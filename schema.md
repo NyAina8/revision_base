@@ -10,3 +10,4 @@
 **categorie** (**id_categorie**, nom) (nouveau)
 
 **Plat** (**id_plat**, nom, prix, #id_categorie) (modifié)
+- Parce qu'on risque d'avoir des incohérences dans les noms des catégories, par exemple Plat malagasy, Plats malagasy et Plat Malagasy. Une table séparée permet de centraliser les catégories et d'éviter des erreurs.
