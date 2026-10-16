@@ -22,3 +22,16 @@
 
 **ligne_commande** (**#id_commande**, **#id_plat**, quantite) (nouveau)
 - La quantité doit être placée dans ligne_commande, et non dans plat ou commande, puisque ça dépend à la fois du plat et de la commande.
+
+## Etape 4 (habitués)
+
+**categorie** (**id_categorie**, nom)
+
+**Plat** (**id_plat**, nom, prix, #id_categorie)
+
+**commande** (**id_commande**, date_commande, #id_client?) (modifié)
+
+**ligne_commande** (**#id_commande**, **#id_plat**, quantite)
+
+**client** (**id_client**, nom) (nouveau)
+-   Non, id_client doit accepter NULL, car certains clients sont de passage. Il faut utiliser LEFT JOIN pour afficher toutes les commandes, même celles qui n'ont aucun client associé.
